@@ -4,16 +4,23 @@
 }
 @using (Html.BeginForm())
 {
- <fieldset> <legend style = "color:blue" > Operation Of Two Numbers </legend>
-    @Html.EditorFor(x => x.A) <br /> <br /> @Html.EditorFor(x => x.B) <br /> <br /> 
-<input type = "submit"
-    value = "add"
-    name = "command" /> <input type = "submit"
-    value = "sub"
-    name = "command" /> <input type = "submit"
-    value = "mul"
-    name = "command" /> <input type = "submit"
-    value = "div"
-    name = "command" /> <br /> <br /> <h2 style = "color:red" > @Html.Label("Result is :")
-    @Html.DisplayFor(x => x.Result) </h2> </fieldset>
+    <fieldset>
+        <legend style="color:blue"> Matt's Calculator! </legend><br /> 
+        @Html.EditorFor(x => x.A) <br /> <br /> @Html.EditorFor(x => x.B) <br /> <br />
+        <input type="submit"
+               value="Add"
+               name="command" />
+        <input type="submit"
+               value="Sub"
+               name="command" />
+        <input type="submit"
+               value="Mul"
+               name="command" />
+        <input type="submit"
+               value="Div"
+               name="command" /> <br /> <br /> <h2 style="color:crimson">
+            @Html.Label("Answer Is :")
+            @Html.DisplayFor(x => x.Result)
+        </h2>
+    </fieldset>
 }

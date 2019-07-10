@@ -10,34 +10,48 @@ using System.Web.Mvc;
 
 namespace MattTest2.Controllers
 {
-    public class HomeController : Controller { 
+    public class HomeController : Controller {
         //    
         // GET: /Home/    
         [HttpGet]
         public ActionResult Index()
     {
-        return View();
+        return View("Index");
     }
-    [HttpPost]
-    public ActionResult Index(CalculatorViewModel model, string command)
-    {
-        if (command == "add")
+
+        public ActionResult Details(string id)
         {
-            model.Result = model.A + model.B;
+            //logic to fetch details on ID
+            return View("Details");
         }
-        if (command == "sub")
+
+        [HttpPost]
+        public ActionResult Index(CalculatorViewModel model, string command)
         {
-            model.Result = model.A - model.B;
-        }
-        if (command == "mul")
-        {
-            model.Result = model.A * model.B;
-        }
-        if (command == "div")
-        {
-            model.Result = model.A / model.B;
-        }
-        return View(model);
-    }
+            if (model == null)
+            {
+                TryValidateModel(model);
+            }
+            else
+            {
+                if (command == "Add")
+                {
+                    model.Result = model.A + model.B;
+                }
+                if (command == "Sub")
+                {
+                    model.Result = model.A - model.B;
+                }
+                if (command == "Mul")
+                {
+                    model.Result = model.A * model.B;
+                }
+                if (command == "Div")
+                {
+                    model.Result = model.A / model.B;
+                }
+              }
+                return View(model);
+            }
 }    
 }

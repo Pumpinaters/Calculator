@@ -6,6 +6,8 @@ using System.Web;
 
 namespace MattTest2.Models
 {
+
+    
     public class CalculatorViewModel
     {
         //public int A { get; set; }    
