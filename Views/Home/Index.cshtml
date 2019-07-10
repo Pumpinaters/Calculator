@@ -4,23 +4,56 @@
 }
 @using (Html.BeginForm())
 {
-    <fieldset>
-        <legend style="color:blue"> Matt's Calculator! </legend><br /> 
-        @Html.EditorFor(x => x.A) <br /> <br /> @Html.EditorFor(x => x.B) <br /> <br />
-        <input type="submit"
-               value="Add"
-               name="command" />
-        <input type="submit"
-               value="Sub"
-               name="command" />
-        <input type="submit"
-               value="Mul"
-               name="command" />
-        <input type="submit"
-               value="Div"
-               name="command" /> <br /> <br /> <h2 style="color:crimson">
+    <fieldset id="fieldsetData">
+        <legend style="color:blue"> Matt's Calculator! </legend><br />
+        @Html.EditorFor(x => x.A, new { htmlAttributes = new { placeholder = "First Number" } })<br /> <br /> @Html.EditorFor(x => x.B, new { htmlAttributes = new { placeholder = "Second Number" } }) <br /> <br />
+
+        <div id="center">
+            <input class="but" type="submit" value="Add" name="command" />
+            <input class="but" type="submit" value="Sub" name="command" />
+            <input class="but" type="submit" value="Mul" name="command" />
+            <input class="but" type="submit" value="Div" name="command" />
+        </div>
+        <br /> <br />
+        <h2 style="color:crimson">
             @Html.Label("Answer Is :")
             @Html.DisplayFor(x => x.Result)
         </h2>
     </fieldset>
 }
+<style> 
+    #center {
+        display: inline-block
+    }
+    #fieldsetData {
+        width: 250px;
+        text-align: center;
+    }
+    legend {
+        font-size: 20px;
+        text-align: center;
+    }
+    input {
+         font-size: 16px;
+         border-width: 0px 0px 2px 0px;
+        border-color: black;
+        border-radius: 0px;
+    }
+    input:focus {
+        border-width: 0px 0px 2px 0px;
+        border-color: dodgerblue;
+        border-radius: 0px;
+    }
+    .but {
+        color black;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 0px;
+        width: 100px;
+    }
+    .but:hover {
+        color: white;
+        background-color: black;
+        border: 1px solid black;
+    }
+</style>
