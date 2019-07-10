@@ -6,7 +6,10 @@
 {
     <fieldset id="fieldsetData">
         <legend style="color:blue"> Matt's Calculator! </legend><br />
-        @Html.EditorFor(x => x.A, new { htmlAttributes = new { placeholder = "First Number" } })<br /> <br /> @Html.EditorFor(x => x.B, new { htmlAttributes = new { placeholder = "Second Number" } }) <br /> <br />
+        @Html.EditorFor(x => x.A, new { htmlAttributes = new { placeholder = "First Number" } })
+        <br /> <br /> 
+        @Html.EditorFor(x => x.B, new { htmlAttributes = new { placeholder = "Second Number" } }) 
+        <br /> <br />
 
         <div id="center">
             <input class="but" type="submit" value="Add" name="command" />
